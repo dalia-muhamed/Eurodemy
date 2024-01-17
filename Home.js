@@ -142,7 +142,7 @@ const mySwiper = new Swiper('.swiper-container', {
       slidesPerView: 5,
       spaceBetween: 70,
     },
-    1024: {
+    1025: {
       slidesPerView: 4,
     },
     768: {
@@ -163,6 +163,26 @@ const mySwiper = new Swiper('.swiper-container', {
     },
   },
 });
+
+// gallery Memory Section ----------------------------------------------------------------------
+function handleGalleryWidth() {
+  const container = document.getElementById('memorySectionContainer');
+  const containerWidth = container.offsetHeight;
+  console.log(containerWidth);
+  const gallery = document.getElementById('AsideGallery');
+
+  // Check if the screen width is larger than 1025px
+  if (window.innerWidth > 1025) {
+    gallery.style.height = `${containerWidth}px`;
+    const gal = gallery.style.height;
+    console.log(gal);
+  }
+}
+
+handleGalleryWidth();
+
+window.addEventListener('resize', handleGalleryWidth);
+
 // ---------------------------------------------- swiper testimonial -----------------------------------
 var swiper = new Swiper('.mySwiperTestimonial', {
   slidesPerView: 5,
