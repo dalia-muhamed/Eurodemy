@@ -163,3 +163,41 @@ const mySwiper = new Swiper('.swiper-container', {
     },
   },
 });
+// ---------------------------------------------- swiper testimonial -----------------------------------
+var swiper = new Swiper('.mySwiperTestimonial', {
+  slidesPerView: 5,
+  spaceBetween: 50,
+  centeredSlides: true,
+
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  breakpoints: {
+    640: {
+      slidesPerView: 1,
+      spaceBetween: 20,
+    },
+    768: {
+      slidesPerView: 3,
+      spaceBetween: 40,
+    },
+    1024: {
+      slidesPerView: 5,
+      spaceBetween: 56,
+    },
+  },
+  on: {
+    slideChangeTransitionEnd: function () {
+      var activeSlide = document.querySelector(
+        '.swiper-slide.swiper-slide-active'
+      );
+      activeSlide.innerHTML = `
+      <div class="swiper-slide-content">
+      <p class="testimonial-name">New Testimonial</p>
+      <img src="https://example.com/new-image.jpg" alt="New Image" />
+    </div>
+      `;
+    },
+  },
+});
